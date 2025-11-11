@@ -29,27 +29,27 @@ export function Tiempo(){
 
     return(
         <>
-            <div className="card mx auto" style={{ width: "320px"}}>
+            <div className="weather-card mx auto" style={{ width: "320px"}}>
                 
                 <input 
                     style={{ width: "200px", marginTop:'5px', textAlign:'center'}}
-                    className="card-text mx-auto my-2"
+                    className="weather-input mx-auto my-2"
                     type="text"
                     placeholder="Ingrese Ciudad"
                     onKeyDown={(e)=>controladorInput(e)} 
                 />
 
-                <div className="card-body">
-                    <h5 className="card-title">{datosTiempo?.location?.name ?? 'Cargando Ubicacion...'} </h5>
+                <div className="weather-card-body">
+                    <h5 className="weather-card-title">{datosTiempo?.location?.name ?? 'Cargando Ubicacion...'} </h5>
 
                     {datosTiempo ? (
                         <div className="weather-info">
-                            <div className="temperature">{datosTiempo.current.temp_c} °C</div>
-                            <div className="condition">{datosTiempo.current.condition.text}</div>
+                            <div className="weather-temperature">{datosTiempo.current.temp_c} °C</div>
+                            <div className="weather-condition">{datosTiempo.current.condition.text}</div>
                             <img src={datosTiempo.current.condition.icon} alt={datosTiempo.current.condition.text} />
                         </div>
                     ) : (
-                        <p className="card-text loading-text">Cargando datos del tiempo...</p>
+                        <p className="weather-loading-text">Cargando datos del tiempo...</p>
                     )}
                 </div>
             </div>

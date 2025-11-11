@@ -42,14 +42,14 @@ export function Tiempo(){
                 <div className="contenido-tarjeta">
                     <h5 className="titulo-tarjeta">{datosTiempo?.location?.name ?? 'Cargando Ubicacion...'} </h5>
 
-                    {datosTiempo ? (
-                        <div className="info-clima">
-                            <div className="temperatura-actual">{datosTiempo.current.temp_c} °C</div>
-                            <div className="condicion-clima">{datosTiempo.current.condition.text}</div>
+                     {datosTiempo ? (
+                        <div className="weather-info">
+                            <div className="temperature">{datosTiempo.current.temp_c} °C</div>
+                            <div className="condition">{datosTiempo.current.condition.text}</div>
                             <img src={datosTiempo.current.condition.icon} alt={datosTiempo.current.condition.text} />
                         </div>
                     ) : (
-                        <p className="texto-cargando">Cargando datos del tiempo...</p>
+                        <p className="card-text loading-text">Cargando datos del tiempo...</p>
                     )}
                 </div>
             </div>
